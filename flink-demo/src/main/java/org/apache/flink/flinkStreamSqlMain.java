@@ -25,6 +25,13 @@ public class flinkStreamSqlMain
         TableConfig tableConfig = tableEnv.getConfig();
         Configuration tableConfigConfiguration =tableConfig.getConfiguration();
 
+        //判断操作系统环境
+        if(System.getProperty("os.name").toLowerCase().startsWith("win")){
+
+        }else{
+
+        }
+
 
         //开启Mini Batch
         tableConfigConfiguration.setString("table.exec.mini-batch.enabled", "true");
@@ -32,6 +39,8 @@ public class flinkStreamSqlMain
         tableConfigConfiguration.setString("table.exec.mini-batch.size", "5000");
 
         //开启Local Global
+
+
 
     }
 }
